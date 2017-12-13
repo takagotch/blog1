@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
-    @message = "msg"
+    #@message = "msg"
   end
 
   def about

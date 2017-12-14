@@ -1,3 +1,9 @@
+<% @page_title = "new register" %>
+
+<h1><%= @page_title %></h1>
+
 <%= form_for @member do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
 <% end %>
 

@@ -4,6 +4,8 @@ module takagotch
 
   config.time_zone = 'Osaka'
 
+  config.i18n.default_locale = :ja
+
   config.active_record.raise_in_transactional_callbacks = true
   
   #dev

@@ -1,0 +1,19 @@
+
+ja:
+  activerecord:
+    models:
+      member: member_info
+    attributes:
+      member:
+        number: num
+        name:   name_user
+        full_name: name
+        gender: gender
+        gender_0: female
+        gender_1: male
+        birthday: birth
+        email:    e-mail
+        administrator: admin
+  errors:
+    messages:
+      invalid_member_name: "hankaku"

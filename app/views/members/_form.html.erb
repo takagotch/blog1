@@ -2,40 +2,46 @@
 
 <table class="attr">
 <tr>
-  <th><%= form.label :number, "number" %></th>
+  <th><%= form.label :number, #"number" %></th>
   <td><%= form.text_field :number, size: 8 %></td>
 </tr>
 <tr>
-  <th><%= form.label :name, "user_name" %></th>
+  <th><%= form.label :name, #"user_name" %></th>
   <td><%= form.text_field :name %></td>
 </tr>
 <tr>
-  <th><%= form.label :full_name, "full_name" %></th>
+  <th><%= form.label :full_name, #"full_name" %></th>
   <td><%= form.text_field :full_name %></td>
 </tr>
 <tr>
-  <th><%= form.label :gender, "gender" %></th>
+  #<th><%= form.label :gender, "gender" %></th>
+  <th><%= Member.human_attribute_name(:gender) %></th>
   <td>
     <%= form.radio_button :gender, 0 %>
-    <%= form.label :gender_0, "male" %>
+    <%= form.label :gender_0, #"male" %>
     <%= form.radio_button :gender, 1 %>
-    <%= form.label :gender_1, "female" %>
+    <%= form.label :gender_1, #"female" %>
   </td>
 </tr>
 <tr>
-  <th><%= form.label :birthday, "birthday",
+  <th><%= form.label :birthday, #"birthday",
 	for: "member_birthday_li" %></th>
   <td><%= form.date_select :birthday,
 	  start_year: 1950, end_year: Time.now.year,
 	  use_month_numbers: true %></td>
 </tr>
 <tr>
-  <th><%= form.label :email, "E-mail" %></th>
+  <th><%= form.label :email, #"E-mail" %></th>
   <td><%= form.text_field :email %></td>
 </tr>
 <tr>
-  <th><%= form.check_box :administrator, %></th>
-  <td><%= form.label :administrator, "administrator" %></td>
+ #<th><%= form.check_box :administrator, %></th>
+  <th><%= Member.human_attribute_name(:administrator) %></th>
+ #<td><%= form.label :administrator, "administrator" %></td>
+  <td>
+    <%= form.check_box :administrator %>	
+    <%= form.label     :administrator %>
+  </td>
 </tr>
 </table>
 

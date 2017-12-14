@@ -18,7 +18,8 @@ validates :number, presence: true,
   uniqueness: true
 
 validates :name, presence: true,
-  format:     { with: /\A[A-Za-z]\w*\x/, allow_blank: true },
+  format:     { with: /\A[A-Za-z]\w*\x/, allow_blank: true,
+                messages: :invalid_member_name },
   length:     { minimum: 2, maximum: 20, allow_blank: true },
   uniqueness: { case_sensitive: false }
 

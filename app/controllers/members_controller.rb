@@ -4,8 +4,13 @@ def index
 end
 
 def search
-	@members = Member.serach{params|:q|}
+	@members = Member.serach(params[:q])
 	render "index"
 end
+
+def show
+	@member = Member.find(params[:id])
+end
+
 end
 

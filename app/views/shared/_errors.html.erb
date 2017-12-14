@@ -1,0 +1,11 @@
+<% if obj.errros.present? %>
+	<div id="errors">
+		<h3>EER</h3>
+		<ul>
+			<% obj.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+

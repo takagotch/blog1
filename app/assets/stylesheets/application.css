@@ -20,6 +20,11 @@ a:link {color: #00c; }
 a:visited {color: #00c; }
 a:hover {border: none; }
 
+/*block*/
+p, h1, h2, h3, table, ul {
+margin: 0 0 1em;
+}
+
 /*frame_all*/
 div#container{
 margin: 0 auto;

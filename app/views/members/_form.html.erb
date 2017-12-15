@@ -43,5 +43,17 @@
     <%= form.label     :administrator %>
   </td>
 </tr>
+<tr>
+	<th><%= form.lable          :password%></th>
+	<td><%= form.password_field :password%></td>
+</tr>
+<tr>
+	<th><%= form.label :password_confirmation%></th>
+	<td><%= form.password_field :password_confirmation %></td>
+</tr>
 </table>
+
+<% unless @member.new_record? %>
+<p>text</p>
+<% end %>
 

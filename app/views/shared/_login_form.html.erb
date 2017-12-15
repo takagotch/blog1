@@ -1,4 +1,6 @@
 <h2>Login</h2>
+<% if flash.alert %><%= flash.alert %><% end %>
+<% form_tag :session do %>
 <table id="login_form">
 <tr>
 	<td style="text-align: right">User_name:</td>
@@ -13,4 +15,5 @@
 	<input type="submit" value="login" /></td>
 </tr>
 </table>
+<% end %>
 

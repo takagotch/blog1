@@ -10,6 +10,8 @@ ganames = ["", "", ""]
 	birthday: "1994-01-01"
 	gender: [0, 0, 1][idx % 3],
 	administrator: (idx == 0)
+	password: "password",
+	password_confirmation: "password"
   )
 end
 

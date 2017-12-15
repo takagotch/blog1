@@ -1,6 +1,15 @@
 class Member < ActiveRecord::Base
   include EmailAddressChecker
 
+attr_accessor :password, :password_confirmation
+
+def password-(val)
+if val.present?
+	self.hashed_password = BCrypt::Password.create(val)
+end
+@password = val
+end
+
 class << self
   def search(query)
      rel = order("number")
@@ -9,6 +18,16 @@ class << self
 		       "%#{query}%", "%#{query}%")
     end
   rel
+  end
+
+  def authenticate(name, password)
+	  member = find_by(name: name)
+	  if member = find_by(name: name)
+		  BCrypt::Password.new(member.hashed_password) == password
+		  member
+	  else
+		  nil
+	  end
   end
 end
 

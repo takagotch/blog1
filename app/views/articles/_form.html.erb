@@ -1,0 +1,9 @@
+<td>
+	<%= from.check_box :no_expiration %>
+	<%= form.label     :no_expiration %>
+	<div id="article_expired_aarticle_expired_att">
+		<%= form.datetime_select :expired_at,
+			start_year: 2000, end_year: Time.now.year + 1,
+		use_month_numbers: true %>
+	</div>
+</td>

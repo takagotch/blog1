@@ -1,6 +1,8 @@
 class TopController < ApplicationController
   def index
     #@message = "msg"
+    @articles = Ariticle.open.readable_for(current_member)
+	    .order("released_at DESC").limit(5)
   end
 
   def about

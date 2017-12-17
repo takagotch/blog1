@@ -1,0 +1,23 @@
+class Article < ActiveRecord::Base
+validates :title, :body, :released_at, presence: true
+validates :title, length: {maximum: 200 }
+validates :check_expired_at
+
+private
+
+def check_expired_at
+if expired_at && expired_at < released_at
+	errors.add(:expired_at, :expired_at_too_old)
+end
+end
+
+def no_expiration
+	expired_at.blank?
+end
+
+def no_expiration=(val)
+	@no_expiration = val.in?([true, 1, "1"])
+end
+
+end
+

@@ -19,4 +19,5 @@ ja:
   errors:
     messages:
       invalid_member_name: "hankaku"
+      expired_at_too_old: xxx.
 

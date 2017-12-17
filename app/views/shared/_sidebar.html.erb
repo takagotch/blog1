@@ -8,7 +8,10 @@
 
 <h2>member_blog</h2>
 <ul>
-	<% 5.times do |i| %>
-	<li><%= link_to "blog_topline", "#" %></li>
+#	<% 5.times do |i| %>
+#	<li><%= link_to "blog_topline", "#" %></li>
+	<% Article.sidebar_article(5).each do |article| %>
+	<li><%= link_to article.title, article %></li>
 	<% end %>
+
 </ul>

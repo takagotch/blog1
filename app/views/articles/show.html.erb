@@ -1,0 +1,28 @@
+<% @page_title = @article.title %>
+<h1><%= @article.title %></h1>
+
+<p><%= link_to "edit", [:edit, @article] %></p>
+
+<table class="attr">
+	<tr>
+		<th width="100">title</th>
+		<td><%= @article.title %></td>
+	</tr>
+	<tr>
+		<th>text</th>
+		<td><%= simple_format(@article.body) %></td>
+	</tr>
+	<tr>
+		<th>start_time</th>
+		<td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+	</tr>
+	<tr>
+		<th>expired_time</th>
+		<td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+	</tr>
+	<tr>
+		<th>member_only</th>
+		<td><%= @article.member_only? ? "y" : "n" %></td>
+	</tr>
+</table>
+

@@ -1,17 +1,26 @@
 <% @page_title = "news lists"%>
 <h1><%= @page_title %></h1>
 
-<><><>
+<p><%= link_to "create", :new_article %></p>
 
-<>
-<>
-<>
-<><>
-<><>
-<><>
-<>
-<>
-<>
-
+<% if @articles.present? %>
+<table class="last">
+<tr>
+<th>title</th>
+<th>date</th>
+<th>control</th>
+</tr>
+<% @articles.each do |article| %>
+	<tr>
+		<td>
+			<%= link_to "edit", |:edit, article| %> |
+			<%= link_to "delete", article, method: :delete,
+	        	  data: { confirm: "delete?" } %>
+		</td>
+	</tr>
+<% end %>
+</table>
+<% else %>
+<p>text</p>
 <% end %>
 

@@ -3,6 +3,7 @@ ja:
   activerecord:
     models:
       member: member_info
+      articles: articles
     attributes:
       member:
         number: num
@@ -16,8 +17,23 @@ ja:
         administrator: admin
         password: pass
         password_confirmation: pass_confirmation
+      article:
+        title: title
+        body: text
+        released_at: released_at time
+        expired_at:  expired_at time
+        no_expiration: no_expiration time
+        member_only: member_only
   errors:
     messages:
       invalid_member_name: "hankaku"
       expired_at_too_old: xxx.
+  article:
+     title: title
+     body: text
+     released_at: released_at time
+     expired_at:  expired_at time
+     no_expiration: no_expiration time
+     member_only: member_only
+
 

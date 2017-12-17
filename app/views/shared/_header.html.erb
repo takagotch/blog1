@@ -10,7 +10,7 @@
 
 <div class="menubar">
 	<%= menu_link_to "TOP", root_path %>
-	&nbsp;|&nbsp; <%= menu_link_to "news", "#"%>
+	&nbsp;|&nbsp; <%= menu_link_to "news", :articles %>
 	&nbsp;|&nbsp; <%= menu_link_to "blog", "#"%>
 <% if current_member %>
 #&nbsp;|&nbsp; <%= menu_link_to "member_lists", "#"%>

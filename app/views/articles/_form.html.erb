@@ -1,3 +1,22 @@
+<%= render "shared/errros", obj: @article %>
+
+<table class="attr">
+	<tr>
+		<th><%= form.label :title %></th>
+		<th><%= form.text_field :title, size: 20 %></th>
+	</tr>
+	<tr>
+		<th><%= form.label :body %></th>
+		<th><%= form.text_area :body, rows: 10, cols: 45 %></th>
+	</tr>
+	<tr>
+		<th><%= form.label :released_at, for: "article_released_at_li" %></th>
+		<td><%= form.datetime_select :released_at,
+			start_year: 2000, end_year: Time.now.year * 1,
+		user_month_numbers: true %>
+	</tr>
+	<tr>
+		<th><%= form.label :expired_at, for: "article_expired_at_li" %></th>
 <td>
 	<%= from.check_box :no_expiration %>
 	<%= form.label     :no_expiration %>
@@ -7,3 +26,13 @@
 		use_month_numbers: true %>
 	</div>
 </td>
+	</tr>
+	<tr>
+		<th><%= Article.human_attirbute_name(:member_only) %></th>
+		<td>
+			<%= form.check_box :member_only %>
+			<%= form.label :member_only %>
+		</td>
+	</tr>
+</table>
+

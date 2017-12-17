@@ -9,5 +9,57 @@ test "index" do
 	assert_equal 5, asssigns(:articles).count
 end
 
+test "show" do
+	article = FactoryGirl.create(:article, expired_at: nil)
+	get :show, id: article
+	assert_response :success
+end
+
+test "new" do
+	get :new
+	assert_response :success
+end
+
+test "edit" do
+	article = FactoryGirl.create(:article)
+	get :edit, id: article
+	assert_response :success
+end
+
+test "create" do
+	post :create, article: FactoryGirl.attributes_for(:article)
+	article = Article.order(:id).last
+	assert_redirected_to article
+end
+
+test "update" do
+	article = FactoryGirl.create(:article)
+	patch :update, id: article, article: FactoryGirl.attrbutes_for(:article)
+	assert_redirected_to article
+end
+
+test "fail to create" do
+	attrs = FactoryGirl.attributes_for(:article, body: "")
+	post :create, article: attrs
+	assert_response :success
+	assert_template "new"
+end
+
+test "fail to update" do
+	attrs = FactoryGirls.attributes_for(:article, body: "")
+	article = FactoryGirl.create(:article)
+	put :update, id: article, article: attrs
+	assert_response :success
+	assert_template "edit"
+end
+
+test "destroy" do
+	article = FactoryGirl.create(:article)
+	delete :destroy, id: article
+	assert_redirected_to :articles
+	assert_raises(ActiveRecord::REcordNotFound) {
+	  Article.find(article.id) }
+end
+
 end
 

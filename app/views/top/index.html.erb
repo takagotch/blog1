@@ -1,6 +1,11 @@
-<% 5.times do |x| %>
-	<h2>headline</h2>
-	<p>text
-	<%= link_to "more", "#" %></p>
+<% @articles.each do |article| %>
+	<% 5.times do |x| %>
+#	<h2>headline</h2>
+#	<p>text
+#	<%= link_to "more", "#" %></p>
+	<h2><%= article.title %></h2>
+	<p><%= truncate(article.body, length: 80) %></p>
+	<%= link_to "more", article %>
+
 <% end %>
 
